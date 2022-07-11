@@ -10,12 +10,13 @@ Self-contained KinD (Kubernetes in Docker) environment for testing custom and ex
 - `cfssl` (optional)
 
 ## Setup
+Create kind cluster using - kind create cluster --config ./cluster.yaml --name autoscaling --image=kindest/node:v1.23.6
 
 Run `./setup.sh` to create KinD cluster with `metrics-server`, Prometheus Operator, Prometheus, Prometheus Adapter, sample application and Service Monitor.
 
 `custom-metrics-apiserver` which is part of Prometheus Adapter, needs serving certificate and key. These are generated in `cm-adapter-serving-certs.yaml` for your convenience, but you can generate new ones using `certs.sh`
 
-Be aware that this setup is meant for testing and should be used in production environment, especially not the pre-generated certificates.
+Be aware that this setup is meant for testing and should not be used in production environment, especially not the pre-generated certificates.
 
 ## Usage
 
